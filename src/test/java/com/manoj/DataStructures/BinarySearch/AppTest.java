@@ -1,4 +1,4 @@
-package com.manoj.DataStructures;
+package com.manoj.DataStructures.BinarySearch;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
