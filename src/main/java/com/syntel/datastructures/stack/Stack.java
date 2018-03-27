@@ -2,21 +2,22 @@ package com.syntel.datastructures.stack;
 
 public class Stack {
 	private int[] stack;
-	private int cursor;
+	private int top;
 
-	public Stack() {
-		stack = new int[10];
+	public Stack(int size) {
+		stack = new int[size];
+		top=-1;
 	}
 
 	public void push(int element) {
-		stack[cursor] = element;
-		cursor++;
+		top++;
+		stack[top] = element;
 	}
 
 	public int pop() {
-		 int c=stack[cursor-1];
-		 cursor--;
-		 return c;
+		 int old_top=top;
+		 top--;
+		 return stack[old_top];
 		
 	}
 }
