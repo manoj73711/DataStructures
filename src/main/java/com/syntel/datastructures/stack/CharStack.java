@@ -3,7 +3,7 @@ package com.syntel.datastructures.stack;
 public class CharStack {
 	private char[] stack;
 	private int top;
-	int maxSize;
+	private int maxSize;
 
 	public CharStack(int size) {
 		maxSize = size;
@@ -12,22 +12,25 @@ public class CharStack {
 	}
 
 	public void push(char element) {
-		if (!isFull()) {
+
+		if (isFull()) {
+			System.out.println("Stack is full");
+		} else {
 			top++;
 			stack[top] = element;
-		} else {
-			System.out.println("stack is full");
 		}
 	}
 
 	public char pop() {
-		if (!isEmpty()) {
+
+		if (isEmpty()) {
+			System.out.println("Stack is empty to pull any details");
+			return 0;
+		} else {
 			int old_top = top;
 			top--;
 			return stack[old_top];
-		} else {
-			System.out.println("stack is empty");
-			return '0';
+
 		}
 
 	}
@@ -41,11 +44,12 @@ public class CharStack {
 	}
 
 	public char peek() {
-		if (!isEmpty()) {
-			return stack[top];
+		if (isEmpty()) {
+			System.out.println("Stack is empty to peek");
+			return 0;
 		} else {
-			System.out.println("Stack is Empty");
-			return '0';
+			return stack[top];
+
 		}
 	}
 }
